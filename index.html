@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">  
+    <title>HD Creative Studio | Design Intake Form</title>
+</head>
+<body>
+    <header>
+        <img src="images/hd-logo.png" alt="HD Creative Studio logo">
+        <h1>HD Creative Studio</h1>
+        <h2>Design Intake Form</h2>
+        <p class="welcome">Welcome to HD Creative Studio, where your vision meets creativity! Whether you're looking for a custom logo, eye-catching flyer, professional website, or complete brand identity, we're here to bring your ideas to life. Please complete the form below to tell us about your project so we can create something uniquely yours!</p>
+    </header>
+    <main>
+        <form action="https://formspree.io/f/xjygwlrz" method="POST">
+          <label for="name">Full Name:</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email Address:</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="tel">Phone Number: (optional)</label>
+          <input type="tel" id="tel" name="tel">
+
+          <fieldset>
+            <legend>Which Design Services are you interested in?</legend>
+            <p>Please select all that apply:</p>
+            <label><input type="checkbox" name="services" value="business-cards"> Business Card Design</label>
+            <label><input type="checkbox" name="services" value="logo"> Logo Design</label>
+            <label><input type="checkbox" name="services" value="flyer"> Flyer Design</label>
+            <label><input type="checkbox" name="services" value="website"> Website Design</label>
+            <label><input type="checkbox" name="services" value="brand"> Brand Identity</label>
+          </fieldset>
+
+          <label for="project">Project Description:</label>
+          <textarea id="project" name="project" rows="5" required></textarea>
+
+          <label for="deadline">Project Deadline (Optional):</label>
+          <input type="date" id="deadline" name="deadline">
+          
+          <label for="budget">Estimated Budget (Optional):</label>
+          <input type="text" id="budget" name="budget" placeholder="e.g., $500 - $1000">
+
+          <button type="submit">Submit</button>
+        </form>
+    </main>
+    <footer>
+        <img src="images/hd-logo.png" alt="HD Creative Studio logo">
+        <p class="thanks-text">Thank you for considering HD Creative Studio for your design needs. We look forward to collaborating with you to bring your creative vision to life!</p>
+        <p>&copy; 2026 HD Creative Studio. All rights reserved.</p>
+    </footer>
+</body>
+</html>

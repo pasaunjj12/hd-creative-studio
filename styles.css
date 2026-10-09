@@ -1,0 +1,117 @@
+header img {
+  width: 250px;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+body {
+    background-color:black;
+    color: white; 
+    font-family: trebuchet ms, sans-serif;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input:not([type="checkbox"]), textarea, select {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 2px solid #A020F0;
+}
+
+fieldset {
+    border: 2px solid #A020F0;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+legend {
+    color: #A020F0;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+button {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 2px solid #A020F0;
+    background-color: #A020F0;
+    color: white;
+    cursor: pointer;
+}
+
+
+button:hover {
+    background-color: white;
+    color: #A020F0;
+}
+
+form {
+    max-width: 700px;
+    margin: auto;
+    padding: 20px;
+    background-color: #1A1A1A;
+    border: 2px solid #A020F0;
+    border-radius: 10px;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.welcome {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 20px auto;
+}
+
+@media (max-width: 600px) {
+    form {
+        padding: 10px;
+    }
+    .welcome {
+        padding: 10px;
+    }
+}
+
+fieldset label {
+    margin-bottom: 12px;
+}
+
+footer img {
+    width: 100px;
+    height: auto;
+}
+
+.thanks-text {
+    text-align: center;
+    max-width: 700px;
+    margin: auto;
+    color: #E8E8E8;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #A020F0;
+    max-width: 700px;
+    margin: 30px auto 0 auto;
+}
+
+h1 {
+    color: #E8E8E8;
+}
