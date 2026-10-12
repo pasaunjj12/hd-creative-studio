@@ -1703,3 +1703,8 @@ nav a[aria-current="page"],
     padding: 45px 20px;
   }
 }
+
+/* Space between the Home featured-project cards and portfolio button. */
+.featured-projects > .projects-grid {
+  margin-bottom: 32px;
+}
