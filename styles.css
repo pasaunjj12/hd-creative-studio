@@ -1616,3 +1616,90 @@ body:not(.about-page) .welcome-title .studio-text {
     transition: none;
   }
 }
+
+
+/* =========================================
+   CROSS-PAGE VISUAL CONSISTENCY - OCT 2026
+   Desktop polish with mobile-safe fallbacks
+========================================= */
+
+/* Highlight the current page without changing the navigation layout. */
+nav a[aria-current="page"],
+.inquiry-nav a[aria-current="page"] {
+  color: var(--purple);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 7px;
+}
+
+/* Balance the final rows while preserving three cards per row. */
+@media (min-width: 901px) {
+  .featured-services .services-grid,
+  .featured-projects .projects-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .featured-services .service-card,
+  .featured-projects .project-card {
+    grid-column: span 2;
+  }
+
+  .featured-services .service-card:nth-last-child(2) {
+    grid-column: 2 / span 2;
+  }
+
+  .featured-projects .project-card:last-child:nth-child(3n + 1) {
+    grid-column: 3 / span 2;
+  }
+}
+
+/* Give About sections a shared content edge and calmer spacing. */
+.about-page .about-story,
+.about-page .founder-section,
+.about-page .about-services,
+.about-page .about-philosophy {
+  width: 100%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 65px 30px;
+}
+
+.about-page .founder-content {
+  max-width: none;
+}
+
+.about-page .about-mission {
+  padding: 65px max(30px, calc((100% - 1040px) / 2));
+  border-left: 0;
+}
+
+.about-page .founder-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 3.5vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 15px 0 25px;
+}
+
+/* Use the same editorial heading family on the portfolio page. */
+.portfolio-page .portfolio-hero-content h1,
+.portfolio-page .portfolio-intro h2,
+.portfolio-page .portfolio-cta h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+@media (max-width: 600px) {
+  .about-page .about-story,
+  .about-page .founder-section,
+  .about-page .about-services,
+  .about-page .about-philosophy {
+    padding: 45px 20px;
+  }
+
+  .about-page .about-mission {
+    padding: 45px 20px;
+  }
+}
