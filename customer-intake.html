@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Start your creative project with HD Creative Studio. Submit an inquiry for logos, branding, flyers, websites, and more.">
+    <link rel="stylesheet" href="styles.css">
+    <title>Client Inquiry | HD Creative Studio</title>
+</head>
+
+<body class="inquiry-page">
+
+    <!-- NAVIGATION -->
+    <header class="inquiry-header">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="customer-intake.html">Client Inquiry</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- INTRODUCTION -->
+        <section class="inquiry-intro">
+            <p class="section-label">LET'S WORK TOGETHER</p>
+
+            <h1>CLIENT<br>INQUIRY</h1>
+
+            <p class="inquiry-script">
+                Start Your Project Today
+            </p>
+        </section>
+
+        <!-- TWO-COLUMN LAYOUT -->
+        <div class="inquiry-layout">
+
+            <!-- LEFT COLUMN: DETAILS -->
+            <section class="inquiry-details">
+
+                <h2 class="inquiry-details-heading">
+                    Ready to bring your vision to life?
+                </h2>
+
+                <p class="inquiry-description">
+                    Fill out the form with your project details,
+                    and we'll be in touch to discuss how we can
+                    create something amazing together.
+                </p>
+
+                <!-- CLIENT BENEFITS -->
+                <div class="inquiry-benefits">
+
+                    <div class="benefit">
+                        <span class="benefit-icon" aria-hidden="true">
+                            &#9993;
+                        </span>
+                        <div>
+                            <h2>Fast Response</h2>
+                            <p>We'll get back to you as soon as possible.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit">
+                        <span class="benefit-icon" aria-hidden="true">
+                            &#10003;
+                        </span>
+                        <div>
+                            <h2>Detailed Planning</h2>
+                            <p>We'll review your project and discuss next steps.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit">
+                        <span class="benefit-icon" aria-hidden="true">
+                            &#9734;
+                        </span>
+                        <div>
+                            <h2>Bring Your Vision to Life</h2>
+                            <p>Let's create something amazing together.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- RIGHT COLUMN: CLIENT FORM -->
+            <section class="inquiry-form-section"
+                     aria-label="Client inquiry form">
+
+                <form
+                    class="inquiry-form"
+                    action="https://formspree.io/f/xjygwlrz"
+                    method="POST">
+
+                    <!-- NAME -->
+                    <label for="name">
+                        Full Name <span class="required">*</span>
+                    </label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Your full name"
+                        autocomplete="name"
+                        required>
+
+                    <!-- EMAIL -->
+                    <label for="email">
+                        Email Address <span class="required">*</span>
+                    </label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="yourname@example.com"
+                        autocomplete="email"
+                        required>
+
+                    <!-- PHONE -->
+                    <label for="tel">
+                        Phone Number (Optional)
+                    </label>
+                    <input
+                        type="tel"
+                        id="tel"
+                        name="tel"
+                        placeholder="Your phone number"
+                        autocomplete="tel">
+
+                    <!-- SERVICES -->
+                    <fieldset class="services-fieldset">
+                        <legend>
+                            Which Design Services Are You Interested In?
+                        </legend>
+
+                        <p>Select all that apply:</p>
+
+                        <label class="checkbox-label">
+                            <input
+                                type="checkbox"
+                                name="services"
+                                value="business-cards">
+                            Business Card Design
+                        </label>
+
+                        <label class="checkbox-label">
+                            <input
+                                type="checkbox"
+                                name="services"
+                                value="logo">
+                            Logo Design
+                        </label>
+
+                        <label class="checkbox-label">
+                            <input
+                                type="checkbox"
+                                name="services"
+                                value="flyer">
+                            Flyer Design
+                        </label>
+
+                        <label class="checkbox-label">
+                            <input
+                                type="checkbox"
+                                name="services"
+                                value="website">
+                            Website Design
+                        </label>
+
+                        <label class="checkbox-label">
+                            <input
+                                type="checkbox"
+                                name="services"
+                                value="brand">
+                            Brand Identity
+                        </label>
+                    </fieldset>
+
+                    <!-- PROJECT DESCRIPTION -->
+                    <label for="project">
+                        Tell Us About Your Project
+                        <span class="required">*</span>
+                    </label>
+                    <textarea
+                        id="project"
+                        name="project"
+                        rows="5"
+                        placeholder="Describe your project, ideas, and vision..."
+                        required></textarea>
+
+                    <!-- DEADLINE -->
+                    <label for="deadline">
+                        Project Deadline (Optional)
+                    </label>
+                    <input
+                        type="text"
+                        id="deadline"
+                        name="deadline"
+                        placeholder="e.g., October 30, 2026 or Flexible">
+
+                    <!-- BUDGET -->
+                    <label for="budget">
+                        Estimated Budget (Optional)
+                    </label>
+                    <input
+                        type="text"
+                        id="budget"
+                        name="budget"
+                        placeholder="e.g., $500 - $1000">
+
+                    <!-- SUBMIT -->
+                    <button type="submit" class="inquiry-submit">
+                        Submit Inquiry
+                    </button>
+
+                </form>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="inquiry-footer">
+        <img
+            src="images/hd-creative-studio-no-background.png"
+            alt="HD Creative Studio logo">
+
+        <p class="thanks-text">
+            Thank you for considering HD Creative Studio.
+            We look forward to bringing your creative vision to life!
+        </p>
+
+        <p>&copy; 2026 HD Creative Studio. All rights reserved.</p>
+
+        <p class="footer-tagline">
+            Created with Passion. Built with Purpose. Inspired by Legacy.
+        </p>
+    </footer>
+
+</body>
+</html>

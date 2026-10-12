@@ -1,123 +1,1616 @@
-header img {
-  width: 250px;
-  height: auto;
-  display: block;
-  margin: auto;
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap');
+
+/* =========================================
+   HD CREATIVE STUDIO - COMPLETE CSS
+========================================= */
+
+:root {
+  --purple: #A020F0;
+  --purple-dark: #7B16C0;
+  --ink: #191919;
+  --gray: #454545;
+  --white: #FFFFFF;
+  --lavender: #F8F3FC;
+  --border: #E8E0EE;
+  --content-width: 1250px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-    background-color:black;
-    color: white; 
-    font-family: trebuchet ms, sans-serif;
+  margin: 0;
+  background: var(--white);
+  color: var(--ink);
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  overflow-x: clip;
 }
 
-label {
-    display: block;
-    margin-bottom: 10px;
+h1, h2, h3, p {
+  margin-top: 0;
 }
 
-input:not([type="checkbox"]), textarea, select {
-    display: block;
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+main, section, article, form {
+  min-width: 0;
+}
+
+/* =========================================
+   SHARED HEADER BACKGROUND
+========================================= */
+
+body > header,
+body:not(.inquiry-page):not(.about-page) > header,
+.about-header,
+.inquiry-header {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  min-height: 700px;
+  padding: 0 3%;
+  background-color: #fff;
+  background-image: url("images/hd-creative-desktop.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+/* No extra logo */
+
+body > header::after,
+nav::after,
+.inquiry-nav::after {
+  content: none;
+  display: none;
+}
+
+/* =========================================
+   SHARED NAVIGATION
+========================================= */
+
+nav,
+.inquiry-nav,
+.about-page .inquiry-nav,
+.inquiry-header nav,
+.about-header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: var(--content-width);
+  min-height: 80px;
+  margin: 0 auto;
+  padding: 18px 25px;
+  background: rgba(255,255,255,.88);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(160,32,240,.15);
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0,0,0,.04);
+}
+
+nav ul,
+.inquiry-nav ul,
+.about-page .inquiry-nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px 30px;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav a,
+.inquiry-nav a {
+  color: var(--ink);
+  font-family: 'Montserrat', sans-serif;
+  font-size: .95rem;
+  font-weight: 600;
+  transition: color .25s ease;
+}
+
+nav a:hover,
+nav a:focus-visible,
+.inquiry-nav a:hover,
+.inquiry-nav a:focus-visible {
+  color: var(--purple);
+}
+
+.inquiry-nav a.active {
+  color: var(--purple);
+  border-bottom: 2px solid var(--purple);
+  padding-bottom: 4px;
+}
+
+.inquiry-nav .nav-cta {
+  display: inline-block;
+  padding: 10px 18px;
+  color: #fff;
+  background: var(--purple);
+  border-radius: 6px;
+}
+
+.inquiry-nav .nav-cta:hover {
+  color: #fff;
+  background: var(--purple-dark);
+}
+
+.nav-logo,
+.header-logo {
+  display: none;
+}
+
+/* =========================================
+   HOMEPAGE HERO
+========================================= */
+
+.hero-label {
+  color: var(--purple);
+  font-size: .9rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin: 85px 0 10px 7%;
+}
+
+.welcome-title {
+  max-width: 650px;
+  margin: 0 0 12px 7%;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem,5vw,5rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.studio-text {
+  display: block;
+  margin-top: 10px;
+  color: var(--purple);
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.8em;
+  font-weight: 400;
+  line-height: 1.15;
+  text-align: center;
+  text-shadow: 0 0 8px rgba(255,255,255,.9);
+}
+
+.hero-tagline {
+  margin: 20px 0 10px 7%;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.hero-description {
+  max-width: 480px;
+  margin: 0 0 15px 7%;
+  color: var(--gray);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* Home buttons moved up */
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 15px 0 0 7%;
+  padding: 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  color: #fff;
+  background: var(--purple);
+  border: 2px solid var(--purple);
+  border-radius: 6px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .95rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: background .25s, color .25s;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background: #fff;
+  color: var(--purple);
+}
+
+.hero-buttons .btn:last-child {
+  color: var(--purple);
+  background: transparent;
+}
+
+.hero-buttons .btn:last-child:hover {
+  color: #fff;
+  background: var(--purple);
+}
+
+/* =========================================
+   SHARED SECTION TITLES
+========================================= */
+
+.section-label {
+  margin-bottom: 15px;
+  color: var(--purple);
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.featured-services h2,
+.featured-projects h2,
+.call-to-action h2,
+.portfolio-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem,4vw,3.5rem);
+  line-height: 1.2;
+  margin-bottom: 25px;
+}
+
+/* =========================================
+   HOMEPAGE SERVICES
+========================================= */
+
+.featured-services {
+  padding: 90px 7%;
+  background: var(--lavender);
+  text-align: center;
+}
+
+.featured-services > p:not(.section-label) {
+  max-width: 750px;
+  margin: 0 auto 40px;
+  color: var(--gray);
+  line-height: 1.8;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-card {
+  min-width: 0;
+  padding: 35px 25px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.service-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.service-card p {
+  color: var(--gray);
+  line-height: 1.8;
+  margin-bottom: 0;
+}
+
+/* =========================================
+   PROJECTS AND PORTFOLIO
+========================================= */
+
+.featured-projects,
+.portfolio-section {
+  padding: 90px 7%;
+  background: #fff;
+  text-align: center;
+}
+
+.featured-projects > p:not(.section-label) {
+  max-width: 750px;
+  margin: 0 auto 40px;
+  color: var(--gray);
+}
+
+.projects-grid,
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-card,
+.portfolio-card {
+  min-width: 0;
+  padding: 25px;
+  background: var(--lavender);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.project-card img,
+.portfolio-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.project-card h3,
+.portfolio-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.project-card p,
+.portfolio-card p {
+  color: var(--gray);
+  line-height: 1.8;
+}
+
+/* =========================================
+   CALL TO ACTION
+========================================= */
+
+.call-to-action {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 65px 35px;
+  background: var(--lavender);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  text-align: center;
+}
+
+.call-to-action p {
+  max-width: 700px;
+  margin: 0 auto 30px;
+  color: var(--gray);
+  line-height: 1.8;
+}
+
+.call-to-action .btn {
+  margin-top: 0;
+}
+
+/* =========================================
+   ABOUT PAGE
+========================================= */
+
+.about-page {
+  background: #fff;
+}
+
+.about-title {
+  width: fit-content;
+}
+
+.about-title .studio-text {
+  display: block;
+  margin-top: 10px;
+  color: var(--purple);
+  font-family: 'Great Vibes', cursive;
+  font-size: 2em;
+  font-weight: 400;
+  text-align: center;
+}
+
+.about-hero {
+  max-width: 900px;
+  padding: 65px 7%;
+}
+
+.about-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem,5vw,4.8rem);
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 15px 0 25px;
+}
+
+.about-hero-description {
+  max-width: 650px;
+  color: var(--gray);
+  line-height: 1.8;
+}
+
+.about-story,
+.about-services,
+.about-philosophy {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 90px 30px;
+}
+
+.about-story h2,
+.about-mission h2,
+.about-services h2,
+.about-philosophy h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem,3.5vw,3.5rem);
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 15px 0 30px;
+}
+
+.about-story p:not(.section-label),
+.about-mission p:not(.section-label),
+.about-services > p:not(.section-label),
+.about-philosophy p:not(.section-label) {
+  max-width: 850px;
+  color: var(--gray);
+  line-height: 1.9;
+  margin-bottom: 22px;
+}
+
+.about-mission {
+  padding: 90px 8%;
+  background: var(--lavender);
+  border-left: 5px solid var(--purple);
+}
+
+.about-services-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 25px;
+  margin-top: 35px;
+}
+
+.about-service-card {
+  min-width: 0;
+  padding: 30px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.about-service-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.about-service-card p {
+  color: var(--gray);
+  line-height: 1.8;
+}
+
+/* =========================================
+   CLIENT INQUIRY HERO
+========================================= */
+
+.inquiry-page {
+  background: #fff;
+}
+
+.inquiry-page > main {
+  position: relative;
+}
+
+.inquiry-page .inquiry-intro {
+  position: absolute;
+  top: -495px;
+  left: 7%;
+  z-index: 1;
+  width: min(570px,86%);
+  max-width: 570px;
+  margin: 0;
+  padding: 0;
+}
+
+.inquiry-intro h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3.2rem,6vw,6rem);
+  font-weight: 400;
+  line-height: 1;
+  margin: 15px 0;
+}
+
+.inquiry-script {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(2.2rem,4vw,4rem);
+  line-height: 1.2;
+  color: var(--purple);
+  margin-bottom: 20px;
+}
+
+.inquiry-layout {
+  display: grid;
+  grid-template-columns: minmax(0,.85fr) minmax(0,1.15fr);
+  align-items: start;
+  gap: 55px;
+  width: 100%;
+  max-width: var(--content-width);
+  margin: 0 auto 80px;
+  padding: 65px 30px 70px;
+}
+
+.inquiry-details,
+.inquiry-form-section {
+  min-width: 0;
+}
+
+.inquiry-details-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem,3vw,2.8rem);
+  font-weight: 400;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.inquiry-description {
+  color: var(--gray);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 35px;
+}
+
+.inquiry-benefits {
+  display: grid;
+  gap: 25px;
+}
+
+.benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.benefit-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--lavender);
+  color: var(--purple);
+  font-size: 1.4rem;
+}
+
+.benefit h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+
+.benefit p {
+  color: var(--gray);
+  font-size: .95rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* =========================================
+   CLIENT INQUIRY FORM
+========================================= */
+
+.inquiry-form {
+  width: 100%;
+  padding: 35px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.05);
+}
+
+.inquiry-form > label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: .95rem;
+  font-weight: 600;
+}
+
+.required {
+  color: var(--purple);
+}
+
+.inquiry-form input:not([type="checkbox"]),
+.inquiry-form textarea,
+.inquiry-form select {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  padding: 13px 15px;
+  margin-bottom: 22px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  color: var(--ink);
+  font: inherit;
+}
+
+.inquiry-form input:focus,
+.inquiry-form textarea:focus,
+.inquiry-form select:focus {
+  outline: 2px solid var(--purple);
+  outline-offset: 1px;
+  border-color: var(--purple);
+}
+
+.inquiry-form textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.inquiry-form fieldset {
+  min-width: 0;
+  padding: 20px;
+  margin: 0 0 25px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.inquiry-form legend {
+  padding: 0 8px;
+  font-weight: 700;
+}
+
+.inquiry-form fieldset p {
+  color: var(--gray);
+  font-size: .9rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 13px;
+  cursor: pointer;
+}
+
+.checkbox-label input {
+  flex-shrink: 0;
+  width: auto;
+  margin: 5px 0 0;
+  accent-color: var(--purple);
+}
+
+.inquiry-submit,
+.inquiry-form button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 15px 25px;
+  background: var(--purple);
+  color: #fff;
+  border: 2px solid var(--purple);
+  border-radius: 7px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .25s;
+}
+
+.inquiry-submit:hover,
+.inquiry-form button[type="submit"]:hover {
+  background: var(--purple-dark);
+  border-color: var(--purple-dark);
+}
+
+/* =========================================
+   WHITE FOOTER - ALL PAGES
+========================================= */
+
+footer,
+.inquiry-footer,
+.about-page footer,
+.inquiry-page footer {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 50px 20px;
+  background-color: #fff;
+  background-image: none;
+  color: var(--ink);
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+footer img,
+.inquiry-footer img {
+  display: block;
+  width: 110px;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 20px;
+}
+
+footer p,
+.inquiry-footer p,
+.about-page footer p,
+.inquiry-page footer p {
+  color: var(--ink);
+  font-family: 'Montserrat', sans-serif;
+  font-size: .9rem;
+  line-height: 1.8;
+  margin: 0 0 10px;
+}
+
+footer a,
+.inquiry-footer a {
+  color: var(--ink);
+}
+
+footer a:hover,
+footer a:focus-visible {
+  color: var(--purple);
+}
+
+footer .footer-tagline,
+.inquiry-footer .footer-tagline {
+  color: var(--purple);
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* =========================================
+   TABLET - 601px TO 900px
+========================================= */
+
+@media (min-width: 601px) and (max-width: 900px) {
+
+  body > header,
+  .about-header,
+  .inquiry-header {
+    height: 600px;
+    min-height: 600px;
+    background-image: url("images/hd-creative-desktop.png");
+    background-position: center center;
+    background-size: cover;
+  }
+
+  nav,
+  .inquiry-nav {
+    min-height: 70px;
+    padding: 15px 20px;
+  }
+
+  nav ul,
+  .inquiry-nav ul {
+    gap: 12px 22px;
+  }
+
+  .hero-label {
+    margin-top: 70px;
+  }
+
+  .welcome-title {
+    font-size: clamp(2.5rem,5vw,4rem);
+  }
+
+  .studio-text {
+    font-size: 1.6em;
+  }
+
+  .hero-tagline {
+    margin-top: 12px;
+  }
+
+  .hero-buttons {
+    margin-top: 12px;
+  }
+
+  .services-grid,
+  .projects-grid,
+  .portfolio-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+
+  .about-services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .inquiry-page .inquiry-intro {
+    top: -420px;
+    left: 6%;
+    width: 52%;
+  }
+
+  .inquiry-intro h1 {
+    font-size: clamp(3rem,6vw,4.5rem);
+  }
+
+  .inquiry-script {
+    font-size: clamp(2rem,4vw,3rem);
+  }
+
+  .inquiry-layout {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 45px 25px 60px;
+  }
+}
+
+/* =========================================
+   MOBILE - UP TO 600px
+========================================= */
+
+@media (max-width: 600px) {
+
+  body {
+    background: #fff;
+    overflow-x: clip;
+  }
+
+  body > header,
+  .about-header,
+  .inquiry-header {
+    height: 550px;
+    min-height: 550px;
+    padding: 0 3%;
+    background-image: url("images/hd-creative-mobile.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+  }
+
+  nav,
+  .inquiry-nav,
+  .about-page .inquiry-nav,
+  .inquiry-header nav {
     width: 100%;
-    margin-bottom: 20px;
-    padding: 10px;
-    font-size: 16px;
-    box-sizing: border-box;
-    border-radius: 5px;
-    border: 2px solid #A020F0;
+    min-height: 65px;
+    padding: 12px 10px;
+    border-radius: 8px;
+  }
+
+  nav ul,
+  .inquiry-nav ul {
+    justify-content: center;
+    gap: 10px 14px;
+  }
+
+  nav a,
+  .inquiry-nav a {
+    font-size: .8rem;
+  }
+
+  .hero-label {
+    margin: 40px 6% 10px;
+    font-size: .75rem;
+    letter-spacing: 2px;
+  }
+
+  .welcome-title {
+    max-width: 90%;
+    margin: 0 6% 12px;
+    font-size: clamp(2.1rem,9vw,3.5rem);
+    line-height: 1.12;
+  }
+
+  .studio-text {
+    font-size: 1.45em;
+    margin-top: 8px;
+  }
+
+  .hero-tagline {
+    margin: 12px 6% 8px;
+    font-size: .85rem;
+    letter-spacing: 1px;
+  }
+
+  .hero-description {
+    max-width: 85%;
+    margin: 0 6% 12px;
+    font-size: .85rem;
+    line-height: 1.55;
+  }
+
+  .hero-buttons {
+    margin: 12px 6% 0;
+    gap: 10px;
+  }
+
+  .btn {
+    padding: 10px 15px;
+    font-size: .82rem;
+  }
+
+  .featured-services,
+  .featured-projects,
+  .portfolio-section {
+    padding: 55px 20px;
+  }
+
+  .services-grid,
+  .projects-grid,
+  .portfolio-grid,
+  .about-services-grid {
+    grid-template-columns: minmax(0,1fr);
+  }
+
+  .service-card,
+  .project-card,
+  .portfolio-card,
+  .about-service-card {
+    padding: 25px 20px;
+  }
+
+  .call-to-action {
+    margin: 30px 15px;
+    padding: 40px 20px;
+  }
+
+  .about-hero {
+    padding: 45px 6%;
+  }
+
+  .about-hero h1 {
+    font-size: clamp(2.3rem,9vw,3.5rem);
+  }
+
+  .about-title .studio-text {
+    font-size: 1.5em;
+  }
+
+  .about-story,
+  .about-services,
+  .about-philosophy,
+  .about-mission {
+    padding: 60px 6%;
+  }
+
+  .inquiry-page .inquiry-intro {
+    top: -410px;
+    left: 6%;
+    width: 88%;
+    max-width: 88%;
+  }
+
+  .inquiry-intro h1 {
+    font-size: clamp(2.6rem,11vw,3.5rem);
+    line-height: 1.05;
+  }
+
+  .inquiry-script {
+    font-size: clamp(1.8rem,7vw,2.7rem);
+    line-height: 1.2;
+  }
+
+  .inquiry-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin: 0 auto 30px;
+    padding: 35px 18px 50px;
+  }
+
+  .inquiry-form {
+    padding: 22px 18px;
+  }
+
+  .inquiry-form fieldset {
+    padding: 15px;
+  }
+
+  .inquiry-benefits {
+    gap: 25px;
+  }
+
+  /* White footer on mobile */
+
+  footer,
+  .inquiry-footer,
+  .about-page footer,
+  .inquiry-page footer {
+    padding: 35px 18px;
+    background-color: #fff;
+    color: var(--ink);
+  }
+
+  footer img,
+  .inquiry-footer img {
+    width: 100px;
+  }
+
+  footer p,
+  .inquiry-footer p,
+  .about-page footer p,
+  .inquiry-page footer p {
+    color: var(--ink);
+    font-size: .8rem;
+  }
 }
 
-input[type="date"] {
-    min-width: 0;
-    max-width: 100%;
+/* =========================================
+   SMALL MOBILE - UP TO 380px
+========================================= */
+
+@media (max-width: 380px) {
+
+  nav a,
+  .inquiry-nav a {
+    font-size: .73rem;
+  }
+
+  nav ul,
+  .inquiry-nav ul {
+    gap: 8px 10px;
+  }
+
+  .welcome-title {
+    font-size: 2rem;
+  }
+
+  .studio-text {
+    font-size: 1.35em;
+  }
+
+  .hero-description {
+    font-size: .8rem;
+  }
+
+  .hero-buttons {
+    gap: 8px;
+  }
+
+  .btn {
+    padding: 9px 12px;
+    font-size: .78rem;
+  }
+
+  .inquiry-intro h1 {
+    font-size: 2.5rem;
+  }
+
+  .inquiry-script {
+    font-size: 1.8rem;
+  }
 }
 
-fieldset {
-    border: 2px solid #A020F0;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 20px;
-    min-width: 0;
-}
 
-legend {
-    color: #A020F0;
-    font-weight: bold;
-    font-size: 18px;
-}
-
-button {
-    display: block;
-    width: 100%;
-    margin-bottom: 20px;
-    padding: 10px;
-    font-size: 16px;
-    box-sizing: border-box;
-    border-radius: 5px;
-    border: 2px solid #A020F0;
-    background-color: #A020F0;
-    color: white;
-    cursor: pointer;
+.inquiry-script {
+  font-size: clamp(2rem, 3.5vw, 3.5rem);
+  line-height: 1.4;
+  margin-top: 25px;
+  margin-bottom: 20px;
 }
 
 
-button:hover {
-    background-color: white;
-    color: #A020F0;
-}
-
-form {
-    max-width: 700px;
-    margin: auto;
-    padding: 20px;
-    background-color: #1A1A1A;
-    border: 2px solid #A020F0;
-    border-radius: 10px;
-}
-
-h1, h2 {
-    text-align: center;
-}
-
-.welcome {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto 20px auto;
+.inquiry-layout {
+  padding-top: 110px;
 }
 
 @media (max-width: 600px) {
-    form {
-        padding: 10px;
-    }
-    .welcome {
-        padding: 10px;
-    }
+  .inquiry-layout {
+    padding-top: 65px;
+  }
 }
 
-fieldset label {
-    margin-bottom: 12px;
+
+.inquiry-details {
+  align-self: center;
+  transform: translateY(-30px);
 }
 
-footer img {
-    width: 100px;
-    height: auto;
+  
+/* CLIENT INQUIRY - FINAL SPACING ADJUSTMENTS */
+
+@media (min-width: 901px) {
+  .inquiry-details {
+    align-self: center;
+    transform: translateY(-65px);
+  }
+
+  .inquiry-layout {
+    margin-bottom: 0;
+    padding-bottom: 30px;
+  }
 }
 
-.thanks-text {
-    text-align: center;
-    max-width: 700px;
-    margin: auto;
-    color: #E8E8E8;
+
+/* =====================================
+   ABOUT PAGE - FINAL DESIGN POLISH
+   ===================================== */
+
+/* Reduce excessive spacing on About page */
+.about-section,
+.story-section,
+.mission-section,
+.legacy-section {
+  min-height: auto;
+  padding-top: 65px;
+  padding-bottom: 65px;
 }
 
+/* Subtle interactive service cards */
+.service-card {
+  transition: transform 0.25s ease,
+              box-shadow 0.25s ease,
+              border-color 0.25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(157, 30, 240, 0.10);
+  border-color: #a020f0;
+}
+
+/* Consistent white footer and purple tagline */
 footer {
-    text-align: center;
-    padding: 20px;
-    border-top: 1px solid #A020F0;
-    max-width: 700px;
-    margin: 30px auto 0 auto;
+  background: #ffffff;
+  color: #222222;
 }
 
-h1 {
-    color: #E8E8E8;
+footer p {
+  color: #222222;
+}
+
+footer p:last-child {
+  color: #a020f0;
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .about-section,
+  .story-section,
+  .mission-section,
+  .legacy-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .service-card {
+    transform: none;
+  }
+}
+
+
+/* MEET THE FOUNDER SECTION */
+
+.founder-section {
+  padding: 70px 25px;
+  background-color: #ffffff;
+}
+
+.founder-content {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.founder-content .section-label {
+  color: #a020f0;
+  letter-spacing: 4px;
+  font-weight: 700;
+}
+
+.founder-content h2 {
+  margin-bottom: 25px;
+}
+
+.founder-content h3 {
+  margin-bottom: 30px;
+}
+
+.founder-content p {
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.founder-content .founder-tagline {
+  color: #a020f0;
+  font-style: italic;
+  font-weight: 600;
+  margin-top: 35px;
+  margin-bottom: 0;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .founder-section {
+    padding: 45px 20px;
+  }
+
+  .founder-content h2 {
+    font-size: 28px;
+  }
+
+  .founder-content h3 {
+    font-size: 19px;
+  }
+}
+
+
+/* ==========================================
+   HD CREATIVE STUDIO - PORTFOLIO PAGE
+   ========================================== */
+
+/* PORTFOLIO INTRODUCTION */
+
+.portfolio-page .portfolio-intro {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 75px 25px 50px;
+  text-align: center;
+}
+
+.portfolio-page .portfolio-intro .section-label {
+  color: #a020f0;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.portfolio-page .portfolio-intro h1 {
+  font-size: clamp(32px, 4vw, 48px);
+  color: #191919;
+  margin-bottom: 25px;
+}
+
+.portfolio-page .portfolio-intro h1 span {
+  color: #a020f0;
+}
+
+.portfolio-page .portfolio-intro > p:last-child {
+  max-width: 750px;
+  margin: 0 auto;
+  color: #454545;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+/* PORTFOLIO GALLERY */
+
+.portfolio-page .portfolio-gallery {
+  padding: 20px 25px 90px;
+  background-color: #ffffff;
+}
+
+.portfolio-page .portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* PROJECT CARDS */
+
+.portfolio-page .portfolio-card {
+  min-width: 0;
+  background-color: #ffffff;
+  border: 1px solid #e8e0ee;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+.portfolio-page .portfolio-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(160, 32, 240, 0.12);
+}
+
+/* PROJECT IMAGES */
+
+.portfolio-page .portfolio-card img {
+  display: block;
+  width: 100%;
+  height: 260px;
+  object-fit: contain;
+  background-color: #f8f3fc;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+/* PROJECT INFORMATION */
+
+.portfolio-page .portfolio-card-content {
+  padding: 25px;
+}
+
+.portfolio-page .portfolio-card-content h2 {
+  color: #191919;
+  font-size: 21px;
+  line-height: 1.4;
+  margin: 0 0 10px;
+}
+
+.portfolio-page .project-type {
+  color: #a020f0;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.portfolio-page .portfolio-card-content p:not(.project-type) {
+  color: #454545;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+/* WEBSITE LINKS */
+
+.portfolio-page .portfolio-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 11px 20px;
+  background-color: #a020f0;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.portfolio-page .portfolio-link:hover,
+.portfolio-page .portfolio-link:focus-visible {
+  background-color: #7b16c0;
+  color: #ffffff;
+}
+
+/* CALL TO ACTION */
+
+.portfolio-page .portfolio-cta {
+  max-width: 1100px;
+  margin: 0 auto 80px;
+  padding: 65px 30px;
+  text-align: center;
+  background-color: #f8f3fc;
+  border-radius: 20px;
+}
+
+.portfolio-page .portfolio-cta h2 {
+  font-size: clamp(26px, 3vw, 36px);
+  color: #191919;
+  margin-bottom: 20px;
+}
+
+.portfolio-page .portfolio-cta p {
+  max-width: 650px;
+  margin: 0 auto 30px;
+  color: #454545;
+  line-height: 1.8;
+}
+
+.portfolio-page .portfolio-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #a020f0;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 10px;
+  transition: background-color 0.3s ease,
+              transform 0.3s ease;
+}
+
+.portfolio-page .portfolio-button:hover,
+.portfolio-page .portfolio-button:focus-visible {
+  background-color: #7b16c0;
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .portfolio-page .portfolio-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .portfolio-page .portfolio-cta {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .portfolio-page .portfolio-intro {
+    padding: 50px 20px 35px;
+  }
+
+  .portfolio-page .portfolio-gallery {
+    padding: 15px 20px 60px;
+  }
+
+  .portfolio-page .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .portfolio-page .portfolio-card img {
+    height: 300px;
+  }
+
+  .portfolio-page .portfolio-card-content {
+    padding: 22px;
+  }
+
+  .portfolio-page .portfolio-cta {
+    margin: 0 20px 55px;
+    padding: 45px 22px;
+  }
+}
+
+/* ACCESSIBLE REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-page .portfolio-card,
+  .portfolio-page .portfolio-link,
+  .portfolio-page .portfolio-button {
+    transition: none;
+  }
+}
+
+
+/* PORTFOLIO HEADER TEXT */
+
+.portfolio-page .site-header {
+  position: relative;
+}
+
+.portfolio-page .portfolio-hero-content {
+  position: absolute;
+  top: 42%;
+  left: 8%;
+  width: 40%;
+  max-width: 550px;
+  z-index: 2;
+}
+
+.portfolio-page .portfolio-hero-label {
+  color: #a020f0;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin-bottom: 15px;
+}
+
+.portfolio-page .portfolio-hero-content h1 {
+  color: #191919;
+  font-size: clamp(30px, 3.5vw, 52px);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.portfolio-page .portfolio-hero-content h1 span {
+  display: block;
+  color: #a020f0;
+}
+
+.portfolio-page .portfolio-hero-description {
+  color: #454545;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* MOBILE HEADER TEXT */
+
+@media (max-width: 768px) {
+  .portfolio-page .portfolio-hero-content {
+    top: 35%;
+    left: 5%;
+    width: 55%;
+  }
+
+  .portfolio-page .portfolio-hero-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  .portfolio-page .portfolio-hero-content h1 {
+    font-size: clamp(20px, 5vw, 32px);
+  }
+
+  .portfolio-page .portfolio-hero-description {
+    font-size: 13px;
+  }
+}
+
+
+/* MATCH HOME AND ABOUT PAGE STUDIO TEXT */
+
+.welcome-title .studio-text {
+  display: block;
+  width: 100%;
+  font-family: "Great Vibes", cursive;
+  font-size: 1.2em;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* HOME PAGE - STUDIO POSITION ONLY */
+
+body:not(.about-page) .welcome-title .studio-text {
+  position: relative;
+  left: -110px;
+  margin-top: 15px;
+}
+
+
+/* ABOUT PAGE - MATCH HOME STUDIO SIZE */
+
+.about-page .welcome-title .studio-text {
+  font-size: 0.75em !important;
+  line-height: 1;
+  margin-top: 15px;
+}
+
+
+/* =====================================
+   PORTFOLIO - FINAL POLISH
+   ===================================== */
+
+/* Make project images interactive */
+.portfolio-page .portfolio-image-link {
+  display: block;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+
+.portfolio-page .portfolio-image-link img {
+  transition: transform 0.3s ease;
+}
+
+.portfolio-page .portfolio-image-link:hover img {
+  transform: scale(1.15);
+}
+
+.portfolio-page .portfolio-image-link:focus-visible {
+  outline: 3px solid #a020f0;
+  outline-offset: -3px;
+}
+
+/* Center the final card on desktop */
+@media (min-width: 901px) {
+  .portfolio-page .portfolio-card:last-child:nth-child(3n + 1) {
+    grid-column: 2;
+  }
+}
+
+/* Keep hover effects comfortable on mobile */
+@media (hover: none) {
+  .portfolio-page .portfolio-card:hover,
+  .portfolio-page .portfolio-image-link:hover img {
+    transform: none;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-page .portfolio-image-link img {
+    transition: none;
+  }
 }
