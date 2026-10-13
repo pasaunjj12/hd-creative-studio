@@ -1820,18 +1820,17 @@ nav a[aria-current="page"],
 }
 
 
-/* Mobile headers: use the same artwork as desktop on every page.
-   The previous mobile-specific background was a different composition. */
+/* Mobile headers: preserve the complete desktop background composition. */
 @media (max-width: 600px) {
   body > header,
+  body:not(.inquiry-page):not(.about-page) > header,
   .about-page > .about-header,
   .portfolio-page > .site-header,
   .inquiry-page > .inquiry-header {
     background-image: url("images/hd-creative-desktop.png");
     background-repeat: no-repeat;
-    /* Show the full width of the artwork instead of cropping it to fill a portrait box. */
-    background-size: 100% auto;
-    background-position: center top;
+    background-size: 100% 100%;
+    background-position: center center;
     background-color: #fff;
   }
 }
