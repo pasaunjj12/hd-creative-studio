@@ -1708,3 +1708,113 @@ nav a[aria-current="page"],
 .featured-projects > .projects-grid {
   margin-bottom: 32px;
 }
+
+
+/* =========================================
+   MOBILE HERO READABILITY & ALIGNMENT
+   Scoped to phones; desktop layout unchanged
+========================================= */
+@media (max-width: 600px) {
+  /* Keep the original background art while providing a readable text area. */
+  body > header,
+  .about-page > .about-header,
+  .inquiry-page > .inquiry-header {
+    height: 550px;
+    min-height: 550px;
+    background-position: center top;
+  }
+
+  body > header > nav {
+    position: relative;
+    z-index: 3;
+  }
+
+  /* HOME: undo the desktop-only scripted offset and improve contrast. */
+  body:not(.about-page):not(.portfolio-page):not(.inquiry-page) > header .hero-label {
+    margin-top: 38px;
+  }
+  body:not(.about-page):not(.portfolio-page):not(.inquiry-page) > header .welcome-title,
+  body:not(.about-page):not(.portfolio-page):not(.inquiry-page) > header .hero-tagline,
+  body:not(.about-page):not(.portfolio-page):not(.inquiry-page) > header .hero-description,
+  body:not(.about-page):not(.portfolio-page):not(.inquiry-page) > header .hero-buttons {
+    position: relative;
+    z-index: 1;
+  }
+  body:not(.about-page):not(.portfolio-page):not(.inquiry-page) .welcome-title .studio-text {
+    left: 0;
+    text-align: left;
+    margin-top: 4px;
+    padding-left: 22px;
+  }
+  body:not(.about-page):not(.portfolio-page):not(.inquiry-page) > header .hero-description {
+    max-width: 265px;
+    color: #25202c;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+  body:not(.about-page):not(.portfolio-page):not(.inquiry-page) > header .hero-buttons {
+    flex-wrap: wrap;
+  }
+
+  /* ABOUT: align the heading and supporting copy within the hero. */
+  .about-page .about-hero {
+    width: 100%;
+    max-width: 100%;
+    padding: 38px 6% 0;
+  }
+  .about-page .about-hero h1 {
+    font-size: clamp(2.2rem, 9vw, 3rem);
+    line-height: 1.12;
+  }
+  .about-page .about-title .studio-text {
+    font-size: 1.35em;
+    margin-top: 2px;
+  }
+  .about-page .about-hero .hero-tagline {
+    margin: 18px 0 10px;
+    max-width: 270px;
+    line-height: 1.45;
+  }
+  .about-page .about-hero-description {
+    max-width: 265px;
+    color: #312b38;
+    font-weight: 500;
+  }
+
+  /* PORTFOLIO: use available width instead of squeezing text into 55%. */
+  .portfolio-page .portfolio-hero-content {
+    top: 32%;
+    left: 6%;
+    width: 82%;
+    max-width: 300px;
+  }
+  .portfolio-page .portfolio-hero-content h1 {
+    max-width: 260px;
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+    line-height: 1.12;
+    margin-bottom: 12px;
+  }
+  .portfolio-page .portfolio-hero-description {
+    max-width: 235px;
+    color: #24202a;
+    font-size: .85rem;
+    line-height: 1.5;
+    font-weight: 500;
+  }
+
+  /* INQUIRY: keep title clear of navigation with predictable positioning. */
+  .inquiry-page .inquiry-intro {
+    top: -395px;
+    left: 6%;
+    width: 88%;
+    max-width: 88%;
+  }
+  .inquiry-page .inquiry-intro h1 {
+    font-size: clamp(2.65rem, 11vw, 3.5rem);
+  }
+  .inquiry-page .inquiry-script {
+    font-size: clamp(1.65rem, 7vw, 2.25rem);
+    line-height: 1.25;
+    margin-top: 15px;
+  }
+}
