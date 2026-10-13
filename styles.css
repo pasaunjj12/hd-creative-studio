@@ -1829,7 +1829,9 @@ nav a[aria-current="page"],
   .inquiry-page > .inquiry-header {
     background-image: url("images/hd-creative-desktop.png");
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
+    /* Show the full width of the artwork instead of cropping it to fill a portrait box. */
+    background-size: 100% auto;
+    background-position: center top;
+    background-color: #fff;
   }
 }
