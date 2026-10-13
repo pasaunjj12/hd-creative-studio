@@ -1991,3 +1991,13 @@ nav a[aria-current="page"],
     max-width: 86%;
   }
 }
+
+/* Slightly larger supporting copy in mobile banners. */
+@media (max-width: 600px) {
+  body:not(.about-page):not(.portfolio-page):not(.inquiry-page) > header .hero-description,
+  .about-page .about-hero-description,
+  .portfolio-page .portfolio-hero-description {
+    font-size: 3.2vw;
+    line-height: 1.45;
+  }
+}
