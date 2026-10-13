@@ -1983,3 +1983,11 @@ nav a[aria-current="page"],
     border-radius: 8px;
   }
 }
+
+/* Keep the About description clear of the laptop on phones. */
+@media (max-width: 600px) {
+  .about-page .about-hero-description {
+    width: 86%;
+    max-width: 86%;
+  }
+}
