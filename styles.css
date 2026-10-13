@@ -1818,3 +1818,18 @@ nav a[aria-current="page"],
     margin-top: 15px;
   }
 }
+
+
+/* Mobile headers: use the same artwork as desktop on every page.
+   The previous mobile-specific background was a different composition. */
+@media (max-width: 600px) {
+  body > header,
+  .about-page > .about-header,
+  .portfolio-page > .site-header,
+  .inquiry-page > .inquiry-header {
+    background-image: url("images/hd-creative-desktop.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+}
