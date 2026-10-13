@@ -1970,3 +1970,16 @@ nav a[aria-current="page"],
     white-space: nowrap;
   }
 }
+
+/* Match About and Inquiry mobile navigation containers to Home and Portfolio. */
+@media (max-width: 600px) {
+  body.about-page > header.about-header > nav,
+  body.inquiry-page > header.inquiry-header > nav {
+    width: 94%;
+    height: 58px;
+    min-height: 58px;
+    margin: 0 auto;
+    padding: 10px 6px;
+    border-radius: 8px;
+  }
+}
